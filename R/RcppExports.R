@@ -25,8 +25,8 @@ ldapr_is_ldap_url <- function(ldap_uri) {
     .Call(`_ldapr_ldapr_is_ldap_url`, ldap_uri)
 }
 
-ldapr_search <- function(f, l, bd) {
-    .Call(`_ldapr_ldapr_search`, f, l, bd)
+ldapr_search <- function(f, at, l, bd) {
+    .Call(`_ldapr_ldapr_search`, f, at, l, bd)
 }
 
 ldapr_unbind <- function(l) {

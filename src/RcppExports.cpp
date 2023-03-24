@@ -46,15 +46,16 @@ BEGIN_RCPP
 END_RCPP
 }
 // ldapr_search
-CharacterVector ldapr_search(SEXP f, SEXP l, SEXP bd);
-RcppExport SEXP _ldapr_ldapr_search(SEXP fSEXP, SEXP lSEXP, SEXP bdSEXP) {
+DataFrame ldapr_search(SEXP f, SEXP at, SEXP l, SEXP bd);
+RcppExport SEXP _ldapr_ldapr_search(SEXP fSEXP, SEXP atSEXP, SEXP lSEXP, SEXP bdSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type f(fSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type at(atSEXP);
     Rcpp::traits::input_parameter< SEXP >::type l(lSEXP);
     Rcpp::traits::input_parameter< SEXP >::type bd(bdSEXP);
-    rcpp_result_gen = Rcpp::wrap(ldapr_search(f, l, bd));
+    rcpp_result_gen = Rcpp::wrap(ldapr_search(f, at, l, bd));
     return rcpp_result_gen;
 END_RCPP
 }

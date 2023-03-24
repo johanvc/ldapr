@@ -78,8 +78,8 @@ ldap <- R6::R6Class("ldap",
     #' @param filter The search filter to apply. Must be a valid LDAP search string
     #' @examples 
     #' ld$search("(uid=guest2)")
-    search = function(filter){
-      ldap_search(filter, private)
+    search = function(filter,attrs){
+      ldap_search(filter, attrs, private)
     },
     
     #' @description Unbind from an authenticated LDAP server

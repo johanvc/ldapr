@@ -1,6 +1,7 @@
 # search
 ldap_search <- function(
   filter,
+  attrs,
   private
 ){
   if(!private$authenticated){
@@ -13,6 +14,7 @@ ldap_search <- function(
   
   ldapr_search(
     filter,
+    attrs,
     private$handle,
     private$base_dn
   )
