@@ -23,16 +23,17 @@ ldap <- R6::R6Class("ldap",
     #' @examples 
     #' ld <- ldap$new("zflexldap.com", "ou=users,ou=guests,dc=zflexsoftware,dc=com", 389)
     initialize = function(
+      uri,
       host, 
       base_dn, 
       port = 389
     ){
+      #' uri <- ldap_string(host, port)
       ldap_init(
         self, 
         private, 
-        host, 
-        base_dn, 
-        port
+        uri,
+        base_dn
       )
     },
     
