@@ -46,17 +46,16 @@ ldap <- R6::R6Class("ldap",
     #' @examples 
     #' ld$bind("guest1", "guest1password", "uid")
     bind = function(
-      user, 
+      dn, 
       pw, 
-      type, 
       timeout = 15
     ){
+      #'ldap_bind_dn(user, private$base_dn, type)
       ldap_bind(
         self, 
         private, 
-        user, 
+        dn, 
         pw, 
-        type, 
         timeout
       )
     },

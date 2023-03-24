@@ -29,17 +29,15 @@ ldap_reset <- function(
 ldap_bind <- function(
   self,
   private,
-  user,
+  dn,
   pw,
-  type = c("cn", "uid"),
   timeout
 ){
   # reset the authentication
   ldap_reset(private, self)
-  type <- match.arg(type)
   
   # build the DN for binding
-  bind_dn <- ldap_bind_dn(user, private$base_dn, type)
+  bind_dn <- dn #'ldap_bind_dn(user, private$base_dn, type)
   
   # perform the bind
   r <- ldapr_bind_s(
@@ -50,7 +48,7 @@ ldap_bind <- function(
   
   # update self
   private$authenticated <- T
-  private$authenticated_user <- user
+  private$authenticated_user <- dn
   private$authenticated_until <- get_timeout(timeout)
   self
 }

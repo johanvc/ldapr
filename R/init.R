@@ -3,12 +3,10 @@ ldap_init <- function(
   self, 
   private,
   uri,
-  base_dn,
-  port = 389
+  base_dn
 ){
-  assert_character(host)
+  assert_character(uri)
   assert_character(base_dn)
-  assert_numeric_scalar(port)
   
   ldap_uri <- uri
   uri_check <- ldapr_url_parse(ldap_uri)
